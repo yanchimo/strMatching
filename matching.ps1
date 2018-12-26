@@ -16,7 +16,7 @@ $arrayBeforeR = @()
 $arrayNumC = 0
 
 $matchingNumC = -1
-# 並び替え（前後の並び替えはしないで改行を入れるだけ）をした後の配列
+# 並び替えをした後の配列
 $arrayAfterC = @()
 $arrayAfterR = @()
 
