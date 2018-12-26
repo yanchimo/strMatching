@@ -29,7 +29,7 @@ $arrayAfterR = @()
 Write-Output("ファイル読み込み")
 # Cの中身確認
 $file = New-Object System.IO.StreamReader($fileNameC, [System.Text.Encoding]::GetEncoding("sjis"))
-while (($line = $file.ReadLine()) -ne $null)
+while ($null -ne($line = $file.ReadLine()))
 {
     Write-Host($line)
     $arrayBeforeC += $line
@@ -39,7 +39,7 @@ $file.Close()
 # Rの中身確認
 Write-Output("")
 $file = New-Object System.IO.StreamReader($fileNameR, [System.Text.Encoding]::GetEncoding("sjis"))
-while (($line = $file.ReadLine()) -ne $null)
+while ($null -ne ($line = $file.ReadLine()))
 {
     Write-Host($line)
     $arrayBeforeR += $line
