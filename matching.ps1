@@ -6,6 +6,9 @@ $fileNameR = "r.txt"
 $outputFileNameC = "outputc.txt"
 $outputFileNameR = "outputr.txt"
 
+# 並び替えて重複を削除するか
+$autoSortFlag = $true
+
 # Cの内容とRの中身
 $arrayBeforeC = @()
 $arrayBeforeR = @()
@@ -45,6 +48,17 @@ $file.Close()
 
 Write-Output("C-count" + $arrayBeforeC.Count)
 Write-Output("R-count" + $arrayBeforeR.Count)
+
+
+<#
+
+    C と Rを並び替えて重複を削除する（FlagがTRUEの場合のみ）
+
+#>
+if ($autoSortFlag -eq $true){
+    $arrayBeforeC = $arrayBeforeC | Sort-Object | Get-Unique
+    $arrayBeforeR = $arrayBeforeR | Sort-Object | Get-Unique
+}
 
 
 <#
